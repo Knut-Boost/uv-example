@@ -1,0 +1,8 @@
+[project]
+name = "localpackage"
+version = "0.1.0"
+
+[build-system]
+requires = [ "setuptools>=80.7.1,<81", "wheel" ]
+build-backend = "setuptools.build_meta"
+

@@ -1,0 +1,29 @@
+version = 1
+revision = 2
+requires-python = "==3.12.6"
+
+[manifest]
+members = [
+    "a",
+    "localpackage",
+]
+
+[[package]]
+name = "a"
+version = "0.0.1"
+source = { editable = "." }
+
+[package.dev-dependencies]
+dev = [
+    { name = "localpackage" },
+]
+
+[package.metadata]
+
+[package.metadata.requires-dev]
+dev = [{ name = "localpackage", editable = "libs/localpackage" }]
+
+[[package]]
+name = "localpackage"
+version = "0.1.0"
+source = { editable = "libs/localpackage" }

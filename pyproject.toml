@@ -1,0 +1,28 @@
+[project]
+name = "a"
+version = "0.0.1"
+dependencies = []
+requires-python = "==3.12.6"
+
+[dependency-groups]
+dev = [
+    "localpackage",
+]
+
+[tool.uv]
+default-groups = [ "dev" ]
+
+[tool.uv.workspace]
+members = [ 
+  "libs/localpackage",
+]
+
+[tool.uv.sources]
+localpackage = { workspace = true }
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = [ "main" ]
